@@ -6,60 +6,103 @@ const products = [
         id: 1,
         name: "Jaw Crusher Plate",
         image: "https://via.placeholder.com/280x280?text=Jaw+Crusher+Plate",
+        images: [
+            "https://via.placeholder.com/640x480?text=Jaw+Crusher+Plate+1",
+            "https://via.placeholder.com/640x480?text=Jaw+Crusher+Plate+2",
+            "https://via.placeholder.com/640x480?text=Jaw+Crusher+Plate+3"
+        ],
         description: "High-quality jaw crusher plates designed for durability and high performance in heavy crushing applications."
     },
     {
         id: 2,
         name: "Cone Crusher Mantle",
         image: "https://via.placeholder.com/280x280?text=Cone+Crusher+Mantle",
+        images: [
+            "https://via.placeholder.com/640x480?text=Cone+Crusher+Mantle+1",
+            "https://via.placeholder.com/640x480?text=Cone+Crusher+Mantle+2"
+        ],
         description: "Precision-engineered cone crusher mantles for optimal crushing efficiency and extended service life."
     },
     {
         id: 3,
         name: "Impact Crusher Blow Bar",
         image: "https://via.placeholder.com/280x280?text=Impact+Crusher+Blow+Bar",
+        images: [
+            "https://via.placeholder.com/640x480?text=Impact+Crusher+Blow+Bar+1",
+            "https://via.placeholder.com/640x480?text=Impact+Crusher+Blow+Bar+2"
+        ],
         description: "Tough impact crusher blow bars engineered for extended service life in impact crushing applications."
     },
     {
         id: 4,
         name: "Crusher Toggle Plate",
         image: "https://via.placeholder.com/280x280?text=Crusher+Toggle+Plate",
+        images: [
+            "https://via.placeholder.com/640x480?text=Crusher+Toggle+Plate+1",
+            "https://via.placeholder.com/640x480?text=Crusher+Toggle+Plate+2"
+        ],
         description: "Durable toggle plates for jaw crushers, designed to handle extreme crushing forces reliably."
     },
     {
         id: 5,
         name: "VSI Rotor Parts",
         image: "https://via.placeholder.com/280x280?text=VSI+Rotor+Parts",
+        images: [
+            "https://via.placeholder.com/640x480?text=VSI+Rotor+Parts+1",
+            "https://via.placeholder.com/640x480?text=VSI+Rotor+Parts+2",
+            "https://via.placeholder.com/640x480?text=VSI+Rotor+Parts+3"
+        ],
         description: "High-performance VSI rotor parts for vertical shaft impact crushers with precision manufacturing."
     },
     {
         id: 6,
         name: "Conveyor Belt Rollers",
         image: "https://via.placeholder.com/280x280?text=Conveyor+Rollers",
+        images: [
+            "https://via.placeholder.com/640x480?text=Conveyor+Rollers+1",
+            "https://via.placeholder.com/640x480?text=Conveyor+Rollers+2"
+        ],
         description: "Industrial-grade conveyor rollers for seamless material transport and efficient operation."
     },
     {
         id: 7,
         name: "Industrial Bearings",
         image: "https://via.placeholder.com/280x280?text=Industrial+Bearings",
+        images: [
+            "https://via.placeholder.com/640x480?text=Industrial+Bearings+1",
+            "https://via.placeholder.com/640x480?text=Industrial+Bearings+2"
+        ],
         description: "Premium quality industrial bearings suitable for crusher machines and heavy equipment."
     },
     {
         id: 8,
         name: "Crusher Liners",
         image: "https://via.placeholder.com/280x280?text=Crusher+Liners",
+        images: [
+            "https://via.placeholder.com/640x480?text=Crusher+Liners+1",
+            "https://via.placeholder.com/640x480?text=Crusher+Liners+2",
+            "https://via.placeholder.com/640x480?text=Crusher+Liners+3"
+        ],
         description: "Wear-resistant crusher liners for jaw and cone crushers, maximizing equipment longevity."
     },
     {
         id: 9,
         name: "Screen Mesh",
         image: "https://via.placeholder.com/280x280?text=Screen+Mesh",
+        images: [
+            "https://via.placeholder.com/640x480?text=Screen+Mesh+1",
+            "https://via.placeholder.com/640x480?text=Screen+Mesh+2"
+        ],
         description: "Durable screen mesh for vibrating screens with excellent wear resistance and sieve accuracy."
     },
     {
         id: 10,
         name: "Gear Box Assembly",
         image: "https://via.placeholder.com/280x280?text=Gear+Box+Assembly",
+        images: [
+            "https://via.placeholder.com/640x480?text=Gear+Box+Assembly+1",
+            "https://via.placeholder.com/640x480?text=Gear+Box+Assembly+2"
+        ],
         description: "Complete gear box assemblies for crusher machines with precision engineering and quality assurance."
     }
 ];
@@ -87,6 +130,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// ============================================
+// STICKY HEADER OFFSET (header-bar + navbar)
+// ============================================
+function updateHeaderBarOffset() {
+    const headerBar = document.querySelector('.header-bar');
+    const h = headerBar ? headerBar.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--header-bar-offset', `${Math.round(h)}px`);
+}
+
+document.addEventListener('DOMContentLoaded', updateHeaderBarOffset);
+window.addEventListener('resize', updateHeaderBarOffset);
 
 // ============================================
 // BACK TO TOP BUTTON
@@ -140,6 +195,104 @@ function escapeHtml(str) {
         .replaceAll("'", '&#039;');
 }
 
+function getProductImages(product) {
+    const imgs = Array.isArray(product?.images) ? product.images.filter(Boolean) : [];
+    if (imgs.length > 0) return imgs;
+    if (product?.image) return [product.image];
+    return [];
+}
+
+function ensureMediaModal() {
+    if (document.getElementById('mediaModal')) return;
+    const modal = document.createElement('div');
+    modal.id = 'mediaModal';
+    modal.className = 'media-modal';
+    modal.hidden = true;
+    modal.innerHTML = `
+        <div class="media-modal__backdrop" data-media-close></div>
+        <div class="media-modal__dialog" role="dialog" aria-modal="true" aria-label="Product image viewer">
+            <button class="media-modal__close" type="button" aria-label="Close" data-media-close>✕</button>
+            <button class="media-modal__nav prev" type="button" aria-label="Previous image" data-media-prev>‹</button>
+            <div class="media-modal__stage">
+                <img class="media-modal__img" alt="">
+            </div>
+            <button class="media-modal__nav next" type="button" aria-label="Next image" data-media-next>›</button>
+            <div class="media-modal__meta">
+                <div class="media-modal__title" data-media-title></div>
+                <div class="media-modal__count" data-media-count></div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+const mediaModalState = {
+    open: false,
+    images: [],
+    index: 0,
+    title: ''
+};
+
+function openMediaModal({ images, index = 0, title = '' }) {
+    ensureMediaModal();
+    const modal = document.getElementById('mediaModal');
+    if (!modal) return;
+
+    mediaModalState.open = true;
+    mediaModalState.images = Array.isArray(images) ? images : [];
+    mediaModalState.index = Math.max(0, Math.min(Number(index) || 0, mediaModalState.images.length - 1));
+    mediaModalState.title = String(title || '');
+
+    modal.hidden = false;
+    document.body.classList.add('media-modal-open');
+    renderMediaModal();
+}
+
+function closeMediaModal() {
+    const modal = document.getElementById('mediaModal');
+    if (!modal) return;
+    mediaModalState.open = false;
+    modal.hidden = true;
+    document.body.classList.remove('media-modal-open');
+}
+
+function stepMediaModal(delta) {
+    if (!mediaModalState.open) return;
+    const total = mediaModalState.images.length;
+    if (total <= 1) return;
+    mediaModalState.index = (mediaModalState.index + delta + total) % total;
+    renderMediaModal();
+}
+
+function renderMediaModal() {
+    const modal = document.getElementById('mediaModal');
+    if (!modal) return;
+    const imgEl = modal.querySelector('.media-modal__img');
+    const titleEl = modal.querySelector('[data-media-title]');
+    const countEl = modal.querySelector('[data-media-count]');
+    if (!imgEl || !titleEl || !countEl) return;
+
+    const total = mediaModalState.images.length;
+    const idx = mediaModalState.index;
+    const src = mediaModalState.images[idx] || '';
+    imgEl.src = src;
+    imgEl.alt = mediaModalState.title ? `${mediaModalState.title} - image ${idx + 1}` : `Image ${idx + 1}`;
+    titleEl.textContent = mediaModalState.title;
+    countEl.textContent = total > 0 ? `${idx + 1} / ${total}` : '';
+}
+
+function observeProductCards() {
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+        if (card.dataset.observed === '1') return;
+        card.dataset.observed = '1';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+}
+
 function renderProducts(list) {
     const productsContainer = document.getElementById('productsContainer');
     if (!productsContainer) return;
@@ -162,12 +315,31 @@ function renderProducts(list) {
         const category = product.category || inferCategory(product.name);
         const waText = `Hello CRUSHTEQ INTERNATIONAL, I need a quote for: ${product.name}`;
         const waLink = `https://wa.me/919599653962?text=${encodeURIComponent(waText)}`;
+        const images = getProductImages(product);
+        const slidesHtml = images.map((src, i) => `
+            <button class="product-gallery__slide" type="button" data-gallery-open data-index="${i}" aria-label="Open image ${i + 1} in full screen">
+                <img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)} image ${i + 1}" loading="lazy">
+            </button>
+        `).join('');
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML = `
             <span class="product-pill">${escapeHtml(category)}</span>
             <div class="product-image">
-                <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" loading="lazy">
+                <div class="product-gallery" data-gallery data-title="${escapeHtml(product.name)}" data-images="${escapeHtml(JSON.stringify(images))}" data-index="0">
+                    <div class="product-gallery__track" data-gallery-track>
+                        ${slidesHtml}
+                    </div>
+                    ${images.length > 1 ? `
+                        <button class="product-gallery__nav prev" type="button" aria-label="Previous image" data-gallery-prev>‹</button>
+                        <button class="product-gallery__nav next" type="button" aria-label="Next image" data-gallery-next>›</button>
+                        <div class="product-gallery__dots" aria-hidden="true">
+                            ${images.map((_, i) => `<span class="product-gallery__dot${i === 0 ? ' active' : ''}" data-dot="${i}"></span>`).join('')}
+                        </div>
+                    ` : `
+                        <div class="product-gallery__hint" aria-hidden="true">Full screen</div>
+                    `}
+                </div>
             </div>
             <div class="product-info">
                 <h3>${escapeHtml(product.name)}</h3>
@@ -182,6 +354,8 @@ function renderProducts(list) {
         `;
         productsContainer.appendChild(productCard);
     });
+
+    observeProductCards();
 }
 
 function initProductsPageControls() {
@@ -412,7 +586,7 @@ function initBannerSlider() {
 document.addEventListener('DOMContentLoaded', initBannerSlider);
 
 // ============================================
-// PRODUCT CARD ANIMATION
+// PRODUCT CARD ANIMATION + GALLERY HANDLERS
 // ============================================
 const observerOptions = {
     threshold: 0.1,
@@ -430,12 +604,96 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', function() {
-    const productCards = document.querySelectorAll('.product-card');
-    productCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    observeProductCards();
+
+    document.addEventListener('click', (e) => {
+        const prevBtn = e.target.closest('[data-gallery-prev]');
+        const nextBtn = e.target.closest('[data-gallery-next]');
+        const openBtn = e.target.closest('[data-gallery-open]');
+
+        const gallery = e.target.closest('[data-gallery]');
+        if (!gallery) return;
+
+        const track = gallery.querySelector('[data-gallery-track]');
+        if (!track) return;
+
+        const imagesJson = gallery.getAttribute('data-images') || '[]';
+        let images = [];
+        try { images = JSON.parse(imagesJson); } catch { images = []; }
+
+        const total = Array.isArray(images) ? images.length : 0;
+        const currentIndex = Math.max(0, Math.min(Number(gallery.getAttribute('data-index')) || 0, Math.max(0, total - 1)));
+
+        function setIndex(newIndex) {
+            const idx = Math.max(0, Math.min(newIndex, Math.max(0, total - 1)));
+            gallery.setAttribute('data-index', String(idx));
+            const slideWidth = track.clientWidth || 1;
+            track.scrollTo({ left: idx * slideWidth, behavior: 'smooth' });
+            const dots = Array.from(gallery.querySelectorAll('.product-gallery__dot'));
+            dots.forEach((d, di) => d.classList.toggle('active', di === idx));
+        }
+
+        if (prevBtn) {
+            e.preventDefault();
+            if (total > 1) setIndex((currentIndex - 1 + total) % total);
+            return;
+        }
+
+        if (nextBtn) {
+            e.preventDefault();
+            if (total > 1) setIndex((currentIndex + 1) % total);
+            return;
+        }
+
+        if (openBtn) {
+            e.preventDefault();
+            const idx = Math.max(0, Math.min(Number(openBtn.getAttribute('data-index')) || 0, Math.max(0, total - 1)));
+            openMediaModal({ images, index: idx, title: gallery.getAttribute('data-title') || '' });
+            return;
+        }
+    }, { passive: false });
+
+    document.addEventListener('scroll', (e) => {
+        const track = e.target instanceof Element ? e.target.closest('.product-gallery__track') : null;
+        if (!track) return;
+        const gallery = track.closest('[data-gallery]');
+        if (!gallery) return;
+        const slideWidth = track.clientWidth || 1;
+        const idx = Math.round(track.scrollLeft / slideWidth);
+        if (Number(gallery.getAttribute('data-index')) !== idx) {
+            gallery.setAttribute('data-index', String(idx));
+            const dots = Array.from(gallery.querySelectorAll('.product-gallery__dot'));
+            dots.forEach((d, di) => d.classList.toggle('active', di === idx));
+        }
+    }, true);
+
+    ensureMediaModal();
+    const modal = document.getElementById('mediaModal');
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target.closest('[data-media-close]')) {
+                e.preventDefault();
+                closeMediaModal();
+                return;
+            }
+            if (e.target.closest('[data-media-prev]')) {
+                e.preventDefault();
+                stepMediaModal(-1);
+                return;
+            }
+            if (e.target.closest('[data-media-next]')) {
+                e.preventDefault();
+                stepMediaModal(1);
+                return;
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (!mediaModalState.open) return;
+        if (e.key === 'Escape') closeMediaModal();
+        if (e.key === 'ArrowLeft') stepMediaModal(-1);
+        if (e.key === 'ArrowRight') stepMediaModal(1);
     });
 });
 
