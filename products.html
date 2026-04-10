@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore CRUSHTEQ INTERNATIONAL's complete range of crusher spare parts including jaw crusher, cone crusher, impact crusher, and conveyor components.">
+    <meta name="keywords" content="crusher spares India, jaw crusher parts, cone crusher parts, impact crusher parts supplier">
+    <meta name="author" content="CRUSHTEQ INTERNATIONAL">
+    <title>Our Products - CRUSHTEQ INTERNATIONAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Back to Top Button -->
+    <div id="backToTop" class="back-to-top">
+        <span>&uarr;</span>
+    </div>
+
+    <!-- Header Bar -->
+    <div class="header-bar">
+        <div class="container">
+            <div class="header-contact">
+                <div class="header-item">
+                    <span class="label">📞 Phone:</span>
+                    <a href="tel:+919599653962">+91 9599653962</a>
+                    <span class="divider">|</span>
+                    <a href="tel:+919811214762">+91 9811214762</a>
+                </div>
+                <div class="header-item">
+                    <span class="label">✉ Email:</span>
+                    <a href="mailto:crushteqsales@gmail.com">crushteqsales@gmail.com</a>
+                </div>
+                <div class="header-item">
+                    <a class="btn-whatsapp" href="https://wa.me/919599653962?text=Hello%20CRUSHTEQ%20INTERNATIONAL%2C%20I%20need%20a%20quote%20for%20crusher%20spares." target="_blank" rel="noopener">
+                        <span class="wa-icon" aria-hidden="true">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <svg class="gear-icon" viewBox="0 0 40 40" width="30" height="30">
+                        <circle cx="20" cy="20" r="8" fill="none" stroke="#ff8c00" stroke-width="2"/>
+                        <g stroke="#4B0082" stroke-width="1.5">
+                            <rect x="19" y="4" width="2" height="6"/>
+                            <rect x="19" y="30" width="2" height="6"/>
+                            <rect x="4" y="19" width="6" height="2"/>
+                            <rect x="30" y="19" width="6" height="2"/>
+                            <circle cx="20" cy="20" r="3" fill="#ff8c00"/>
+                        </g>
+                    </svg>
+                    <span>CRUSHTEQ</span>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="about.html">Profile</a></li>
+                    <li><a href="contact.html">Enquiry</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Our Products</span>
+            </div>
+            <h1>Our Products</h1>
+        </div>
+    </section>
+
+    <!-- Products Catalog -->
+    <section class="products-section products-page" id="products">
+        <div class="container">
+            <div class="products-hero">
+                <div class="products-hero-text">
+                    <h2>Crusher Spare Parts Catalog</h2>
+                    <p>Browse popular spares and wear parts. Use filters to find the right item fast—then send an enquiry to get pricing and availability.</p>
+                </div>
+                <div class="products-hero-cta">
+                    <a href="contact.html" class="btn btn-primary">Send Enquiry</a>
+                    <a href="about.html#brochure" class="btn btn-secondary">Download Brochure</a>
+                </div>
+            </div>
+
+            <div class="products-controls" aria-label="Product filters">
+                <div class="control search">
+                    <label for="productSearch">Search</label>
+                    <input id="productSearch" type="search" placeholder="Search products (e.g., Jaw plate, mantle, bearing)" autocomplete="off">
+                </div>
+                <div class="control">
+                    <label for="productCategory">Category</label>
+                    <select id="productCategory">
+                        <option value="all">All categories</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label for="productSort">Sort</label>
+                    <select id="productSort">
+                        <option value="popular">Popular</option>
+                        <option value="name-asc">Name (A–Z)</option>
+                        <option value="name-desc">Name (Z–A)</option>
+                    </select>
+                </div>
+                <div class="control meta" aria-live="polite">
+                    <div class="count"><span id="productCount">0</span> items</div>
+                    <button class="btn btn-secondary btn-sm" id="clearFilters" type="button">Clear</button>
+                </div>
+            </div>
+
+            <div id="productsContainer" class="products-grid"></div>
+            <div id="productsEmpty" class="products-empty" hidden>
+                <h3>No matching products</h3>
+                <p>Try a different search or clear filters.</p>
+                <a class="btn btn-primary" href="contact.html">Send Enquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About Company</h3>
+                    <p><strong>CRUSHTEQ INTERNATIONAL</strong></p>
+                    <p>Deals in All Kinds of Crusher Spares</p>
+                    <p><strong>Owner:</strong> Abhishek Gulati</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><strong>Address:</strong><br>14, Gokhale Market, 1st Floor,<br>Opp. Tis Hazari Court,<br>Delhi - 110054, India</p>
+                    <p><strong>Phone:</strong><br><a href="tel:+919599653962">+91 9599653962</a><br><a href="tel:+919811214762">+91 9811214762</a></p>
+                    <p><strong>Email:</strong><br><a href="mailto:crushteqsales@gmail.com">crushteqsales@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CRUSHTEQ INTERNATIONAL. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
