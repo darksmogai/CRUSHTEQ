@@ -4,107 +4,104 @@
 const products = [
     {
         id: 1,
-        name: "Jaw Crusher Plate",
-        image: "https://via.placeholder.com/280x280?text=Jaw+Crusher+Plate",
+        name: "Bolt",
+        image: "/img/Bolt.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Jaw+Crusher+Plate+1",
-            "https://via.placeholder.com/640x480?text=Jaw+Crusher+Plate+2",
-            "https://via.placeholder.com/640x480?text=Jaw+Crusher+Plate+3"
+            "/img/Bolt.jpeg"
         ],
-        description: "High-quality jaw crusher plates designed for durability and high performance in heavy crushing applications."
+        description: "High-strength industrial bolts for heavy-duty applications."
     },
     {
         id: 2,
-        name: "Cone Crusher Mantle",
-        image: "https://via.placeholder.com/280x280?text=Cone+Crusher+Mantle",
+        name: "T-Bolt",
+        image: "/img/T bolt.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Cone+Crusher+Mantle+1",
-            "https://via.placeholder.com/640x480?text=Cone+Crusher+Mantle+2"
+            "/img/T bolt.jpeg"
         ],
-        description: "Precision-engineered cone crusher mantles for optimal crushing efficiency and extended service life."
+        description: "Precision-engineered T-bolts used in clamping and machine assemblies."
     },
     {
         id: 3,
-        name: "Impact Crusher Blow Bar",
-        image: "https://via.placeholder.com/280x280?text=Impact+Crusher+Blow+Bar",
+        name: "Breather",
+        image: "/img/Breather.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Impact+Crusher+Blow+Bar+1",
-            "https://via.placeholder.com/640x480?text=Impact+Crusher+Blow+Bar+2"
+            "/img/Breather.jpeg"
         ],
-        description: "Tough impact crusher blow bars engineered for extended service life in impact crushing applications."
+        description: "Durable breather components for industrial machinery ventilation."
     },
     {
         id: 4,
-        name: "Crusher Toggle Plate",
-        image: "https://via.placeholder.com/280x280?text=Crusher+Toggle+Plate",
+        name: "Mountain Pad",
+        image: "/img/Mountain pad.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Crusher+Toggle+Plate+1",
-            "https://via.placeholder.com/640x480?text=Crusher+Toggle+Plate+2"
+            "/img/Mountain pad.jpeg",
+            "/img/Mountain pad1.jpeg",
+            "/img/Mountain pad2.jpeg"
         ],
-        description: "Durable toggle plates for jaw crushers, designed to handle extreme crushing forces reliably."
+        description: "Strong and reliable mounting pads for vibration control."
     },
     {
         id: 5,
-        name: "VSI Rotor Parts",
-        image: "https://via.placeholder.com/280x280?text=VSI+Rotor+Parts",
+        name: "Oil Filter",
+        image: "/img/Oil filter.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=VSI+Rotor+Parts+1",
-            "https://via.placeholder.com/640x480?text=VSI+Rotor+Parts+2",
-            "https://via.placeholder.com/640x480?text=VSI+Rotor+Parts+3"
+            "/img/Oil filter.jpeg",
+            "/img/Oil filter1.jpeg"
         ],
-        description: "High-performance VSI rotor parts for vertical shaft impact crushers with precision manufacturing."
+        description: "High-efficiency oil filters for industrial equipment."
     },
     {
         id: 6,
-        name: "Conveyor Belt Rollers",
-        image: "https://via.placeholder.com/280x280?text=Conveyor+Rollers",
+        name: "Pump",
+        image: "/img/pump.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Conveyor+Rollers+1",
-            "https://via.placeholder.com/640x480?text=Conveyor+Rollers+2"
+            "/img/pump.jpeg",
+            "/img/pump1.jpeg"
         ],
-        description: "Industrial-grade conveyor rollers for seamless material transport and efficient operation."
+        description: "Industrial-grade pumps for heavy machinery operations."
     },
     {
         id: 7,
-        name: "Industrial Bearings",
-        image: "https://via.placeholder.com/280x280?text=Industrial+Bearings",
+        name: "Crusher Filter Replacement",
+        image: "/img/Replacement for crusher filter.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Industrial+Bearings+1",
-            "https://via.placeholder.com/640x480?text=Industrial+Bearings+2"
+            "/img/Replacement for crusher filter.jpeg",
+            "/img/Replacement for crusher filter1.jpeg",
+            "/img/Replacement for crusher filter2.jpeg",
+            "/img/Replacement for crusher filter3.jpeg",
+            "/img/Replacement for crusher filter4.jpeg",
+            "/img/Replacement for crusher filter5.jpeg"
         ],
-        description: "Premium quality industrial bearings suitable for crusher machines and heavy equipment."
+        description: "Premium replacement filters for crusher machines."
     },
     {
         id: 8,
-        name: "Crusher Liners",
-        image: "https://via.placeholder.com/280x280?text=Crusher+Liners",
+        name: "Rubber Pad",
+        image: "/img/Rubber pad.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Crusher+Liners+1",
-            "https://via.placeholder.com/640x480?text=Crusher+Liners+2",
-            "https://via.placeholder.com/640x480?text=Crusher+Liners+3"
+            "/img/Rubber pad.jpeg",
+            "/img/Rubber pad1.jpeg"
         ],
-        description: "Wear-resistant crusher liners for jaw and cone crushers, maximizing equipment longevity."
+        description: "Durable rubber pads for industrial support and cushioning."
     },
     {
         id: 9,
-        name: "Screen Mesh",
-        image: "https://via.placeholder.com/280x280?text=Screen+Mesh",
+        name: "Rubber Support",
+        image: "/img/Rubber support.jpeg",
         images: [
-            "https://via.placeholder.com/640x480?text=Screen+Mesh+1",
-            "https://via.placeholder.com/640x480?text=Screen+Mesh+2"
+            "/img/Rubber support.jpeg",
+            "/img/Rubber support1.jpeg",
+            "/img/Rubber support3.jpeg"
         ],
-        description: "Durable screen mesh for vibrating screens with excellent wear resistance and sieve accuracy."
-    },
-    {
-        id: 10,
-        name: "Gear Box Assembly",
-        image: "https://via.placeholder.com/280x280?text=Gear+Box+Assembly",
-        images: [
-            "https://via.placeholder.com/640x480?text=Gear+Box+Assembly+1",
-            "https://via.placeholder.com/640x480?text=Gear+Box+Assembly+2"
-        ],
-        description: "Complete gear box assemblies for crusher machines with precision engineering and quality assurance."
+        description: "Heavy-duty rubber supports for machinery stability."
     }
+];
+
+/** Home page: legacy grouped cards (same products as catalog) */
+const HOME_PRODUCT_GROUPS = [
+    { title: "Fasteners & Mounts", ids: [1, 2, 4] },
+    { title: "Filters & Breathers", ids: [3, 5, 7] },
+    { title: "Pumps & Rubber Parts", ids: [6, 8, 9] }
 ];
 
 // ============================================
@@ -293,12 +290,108 @@ function observeProductCards() {
     });
 }
 
-function renderProducts(list) {
-    const productsContainer = document.getElementById('productsContainer');
+function buildFeaturedHomeCardHtml(product) {
+    const category = product.category || inferCategory(product.name);
+    const waText = `Hello CRUSHTEQ INTERNATIONAL, I need a quote for: ${product.name}`;
+    const waLink = `https://wa.me/919599653962?text=${encodeURIComponent(waText)}`;
+    const images = getProductImages(product);
+    const slidesHtml = images.map((src, i) => `
+            <button class="product-gallery__slide" type="button" data-gallery-open data-index="${i}" aria-label="Open image ${i + 1} in full screen">
+                <img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)} image ${i + 1}" loading="lazy">
+            </button>
+        `).join("");
+    const galleryExtras = images.length > 1
+        ? `
+                        <button class="product-gallery__nav prev" type="button" aria-label="Previous image" data-gallery-prev>‹</button>
+                        <button class="product-gallery__nav next" type="button" aria-label="Next image" data-gallery-next>›</button>
+                        <div class="product-gallery__dots" aria-hidden="true">
+                            ${images.map((_, i) => `<span class="product-gallery__dot${i === 0 ? " active" : ""}" data-dot="${i}"></span>`).join("")}
+                        </div>`
+        : `
+                        <div class="product-gallery__hint" aria-hidden="true">Full screen</div>`;
+    const desc = String(product.description || "");
+    const spec2 = desc.length > 90 ? `${desc.slice(0, 87)}…` : desc;
+
+    return `
+                    <div class="featured-product-item">
+                        <div class="product-image">
+                            <div class="product-gallery" data-gallery data-title="${escapeHtml(product.name)}" data-images="${escapeHtml(JSON.stringify(images))}" data-index="0">
+                                <div class="product-gallery__track" data-gallery-track>
+                                    ${slidesHtml}
+                                </div>
+                                ${galleryExtras}
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h4>${escapeHtml(product.name)}</h4>
+                            <p class="price">Best price <span>on request</span></p>
+                            <div class="specs">
+                                <span class="spec">${escapeHtml(category)}</span>
+                                <span class="spec">${escapeHtml(spec2)}</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="tel:+919599653962" class="btn btn-primary btn-sm">Call Us</a>
+                                <a href="${waLink}" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener"><span class="wa-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.817 9.817 0 01-1.473-5.165c0-5.433 4.395-9.834 9.802-9.834 2.62 0 5.07.967 6.911 2.714a9.695 9.695 0 012.881 6.904c0 5.433-4.395 9.834-9.802 9.834M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.892-11.893C24.001 5.335 18.668.001 12.05 0"/></svg><span>WhatsApp</span></span></a>
+                            </div>
+                        </div>
+                    </div>`;
+}
+
+function renderHomeFeaturedProducts() {
+    const root = document.getElementById("homeProductsLegacy");
+    if (!root) return;
+
+    const byId = Object.fromEntries(products.map(p => [p.id, p]));
+    const parts = [];
+
+    HOME_PRODUCT_GROUPS.forEach((group) => {
+        const cards = group.ids
+            .map((id) => byId[id])
+            .filter(Boolean)
+            .map((p) => buildFeaturedHomeCardHtml(p))
+            .join("\n");
+
+        parts.push(`
+            <div class="home-products-group">
+                <div class="group-head">
+                    <h3>${escapeHtml(group.title)}</h3>
+                    <a href="products.html" class="group-link">View More →</a>
+                </div>
+                <div class="featured-products-list">
+${cards}
+                </div>
+            </div>`);
+    });
+
+    root.innerHTML = parts.join("\n");
+}
+
+function renderProductCategories() {
+    const root = document.getElementById("productCategoriesGrid");
+    if (!root) return;
+
+    const categoryProducts = products.slice(0, 8);
+    const cards = categoryProducts.map(product => `
+        <div class="category-card">
+            <div class="category-image">
+                <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" loading="lazy">
+            </div>
+            <h4>${escapeHtml(product.name)}</h4>
+            <p>${escapeHtml(product.description)}</p>
+            <a href="products.html" class="category-link">View Product →</a>
+        </div>
+    `).join("\n");
+
+    root.innerHTML = cards;
+}
+
+function renderProducts(list, containerId = 'productsContainer') {
+    const productsContainer = document.getElementById(containerId);
     if (!productsContainer) return;
 
-    const countEl = document.getElementById('productCount');
-    const emptyEl = document.getElementById('productsEmpty');
+    const isCatalog = containerId === 'productsContainer';
+    const countEl = isCatalog ? document.getElementById('productCount') : null;
+    const emptyEl = isCatalog ? document.getElementById('productsEmpty') : null;
 
     productsContainer.innerHTML = '';
 
@@ -345,9 +438,9 @@ function renderProducts(list) {
                 <h3>${escapeHtml(product.name)}</h3>
                 <p>${escapeHtml(product.description)}</p>
                 <div class="product-actions">
-                    <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                    <a href="tel:+919599653962" class="btn btn-primary">Call Us</a>
                     <a href="${waLink}" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                        <span class="wa-icon" aria-hidden="true">WhatsApp</span>
+                        <span class="wa-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.817 9.817 0 01-1.473-5.165c0-5.433 4.395-9.834 9.802-9.834 2.62 0 5.07.967 6.911 2.714a9.695 9.695 0 012.881 6.904c0 5.433-4.395 9.834-9.802 9.834M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.892-11.893C24.001 5.335 18.668.001 12.05 0"/></svg><span>WhatsApp</span></span>
                     </a>
                 </div>
             </div>
@@ -359,6 +452,8 @@ function renderProducts(list) {
 }
 
 function initProductsPageControls() {
+    renderHomeFeaturedProducts();
+
     const searchEl = document.getElementById('productSearch');
     const categoryEl = document.getElementById('productCategory');
     const sortEl = document.getElementById('productSort');
@@ -366,7 +461,7 @@ function initProductsPageControls() {
 
     // If controls don't exist, we're not on the products page UI.
     if (!searchEl || !categoryEl || !sortEl || !clearBtn) {
-        renderProducts(getProductsForPage());
+        renderProducts(getProductsForPage(), 'productsContainer');
         return;
     }
 
@@ -406,7 +501,10 @@ function initProductsPageControls() {
 }
 
 // Call renderProducts when page loads
-document.addEventListener('DOMContentLoaded', initProductsPageControls);
+document.addEventListener('DOMContentLoaded', () => {
+    initProductsPageControls();
+    renderProductCategories();
+});
 
 // ============================================
 // FORM VALIDATION & SUBMISSION
